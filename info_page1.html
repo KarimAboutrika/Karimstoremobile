@@ -1,0 +1,620 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karim Store</title>
+    <link rel="icon" href="img/icon.png">
+     <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!--<link rel="stylesheet" href="CSS/style.css"> -->
+    <link rel="stylesheet" href="CSS/info_page1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+
+    <div class="cart">
+        <div class="top_cart">
+            <h3>Cart Items: <span class="count_item_cart">0</span></h3>
+            <span onclick=" open_close_cart()" class="close_cart"><i class="fa-solid fa-circle-xmark"></i></span>
+        </div>
+
+        <div class="items_in_cart" id="cart_items">
+
+
+           
+
+
+        </div>
+
+        <div class="bottom_cart">
+                <div class="total">
+                    <p>subtotal</p>
+                    <p class="price_cart_total">0</p>
+                </div>
+            </div>
+
+            <div class="button_cart">
+                <a href="chekout.html" class="btn_cart ">checkout</a>
+                <span onclick="open_close_cart()" class="btn_cart_trans_bg ">shop more </span>
+            </div>
+         </div>   
+
+    </div>
+
+    
+
+    <header>
+
+        <div class="top_header">
+            <div class="container">
+                <a href="#" class="logo"> <img src="img/logo karim.png" width="130px" height="100px"></a>
+
+                <form action="" class="search_box">
+                    
+                    <div class="select_box">
+                        <select id="category" name="category">
+                            <option value="All categories">All categories</option>
+                            <option value="New Mobiles">New Mobiles</option>
+                            <option value="Used Mobiles">Uesd Mobiles</option>
+                            <option value="Accessories Mobiles">Accessories</option>
+                        </select>
+                    </div>
+
+                    <input type="text" name="search" id="search" placeholder="search for produstes" required>
+
+                    <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+
+                </form>
+
+                <div class="header_icons">
+                    <div class="icon">
+                        <a href="#">
+                            <i class="fa-solid fa-heart"></i>
+                            <span class="count count_fivourite">0</span>
+                        </a>
+                    </div>
+
+                    <div onclick="open_close_cart()" class="icon">
+                        <a href="#">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="count count_item_header">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="bottom_header">
+            <div class="container">
+                <nav class="nav">
+                    <div class="category_nav">
+                        <div onclick="Open_Categ_list()" class="category_btn">
+                            <i class="fa-solid fa-bars"></i>
+                            <p>Browse category</p>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+
+                        <div class="category_nav_list">
+                            <a href="new_mobile.html">New Mobile</a>
+                            <a href="#">Used Mobile</a>
+                            <a href="#">Accessories</a>
+                            <a href="#">Repire Mobile</a>
+                        </div>
+                    </div>
+
+                    <ul class="nav_links">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="new_mobile.html">New Mobile</a></li>
+                        <li><a href="#">Used Mobile</a></li>
+                        <li><a href="#">accessories</a></li>
+                    </ul>
+                </nav>
+
+                <div class="login_signup_btns">
+                    <a href="#" class="btn">login  <i class="fa-solid fa-right-to-bracket"></i> </a>
+
+                    <a href="#" class="btn">sign up  <i class="fa-solid fa-user-plus"></i> </a>
+                </div>
+
+            </div>
+        </div>
+
+    </header>
+
+
+ <!-- ..................... وصف المنتج 1 .........................-->
+
+ <div class="url">Home> mobile> oppo</div>
+ 
+  <div class="product-view container">
+  <div class="product-images">
+    <img id="mainImg" src="" alt="Main Product Image" class="main-img">
+    <div class="thumbs" id="thumbnails"></div>
+  </div>
+
+  <div class="product-details">
+    <h2 id="productName"></h2>
+    <div class="price-box">
+      <span class="price" id="productPrice"></span>
+      <span class="old-price" id="oldPrice"></span>
+      <span class="discount" id="discount"></span>
+    </div>
+    <p id="productDesc"></p>
+
+    <div class="stars">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+    </div>
+
+    <div class="quantity">
+    <label>الكمية:</label>
+    <div class="quantity-controls">
+        <button class="decrease">-</button>
+        <input type="number" id="quantityInput" value="1" min="1">
+        <button class="increase">+</button>
+    </div>
+    </div>
+    
+    <p class="total-price">الإجمالي: <span id="totalPrice">0 ج.م</span></p>
+
+   
+
+  <div class="action-buttons">
+    <button id="buyNowBtn" class="buy-btn">🛒 اشترِ الآن</button>
+    <button id="addToCartBtn" class="cart-btn">أضف إلى السلة 🛍️</button>
+  </div>
+</div>
+
+
+
+
+ <!-- ..................... تفاصيل المنتج ..................-->
+
+  <!-- .................................. جدول التفاصيل ................................-->
+
+    <div class="product-details">
+
+  <!-- وصف المنتج -->
+  <div class="product-description">
+    <h3>وصف المنتج </h3>
+    <p id="productDescription">سيتم تحميل التفاصيل هنا...</p>
+  </div>
+
+  <!-- جدول المواصفات -->
+  <div class="product-specs">
+    <h3>المواصفات التقنية</h3>
+    <table id="specsTable"></table>
+  </div>
+
+  <!-- المميزات -->
+  <div class="product-advantages">
+    <h3>مميزات المنتج</h3>
+    <ul id="advantagesList"></ul>
+  </div>
+
+  <!-- العيوب -->
+  <div class="product-disadvantages">
+    <h3>عيوب المنتج</h3>
+    <ul id="disadvantagesList"></ul>
+  </div>
+
+</div>
+
+  
+  <!--...............................نهاية جدول وتفاصيل المنتج .........................-->
+
+<script>
+  let pinImg = document.getElementById('main-img');
+  function showImg(pic) {
+    pinImg.src = pic;
+  }
+</script>
+
+ <hr class="section-divider">
+    <!-- footer-->
+     <footer>
+       
+        <div class="contianer"  style="width: auto; ">
+            <div class="big_row">
+                <img class="logo_footer" src="img/logo karim.png" width="50%" height="50%" alt="">
+
+                <p> Karim Store Page Mobile New and Used and repire <br> mobile and accessories mobile </p>
+
+                <div class="icon_footer">
+                    <a href="#"><i class="fa-solid fa-phone"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-solid fa-x"></i></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <h4>Find It Fast</h4>
+
+                <div class="links">
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Lap top & computer </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Mobile & Tabelet </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>TV & Audio </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Appliances </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Jewelry & Watches </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <h4>Quick Links</h4>
+
+                <div class="links">
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Your Account </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Returns & Exchanges </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Shipping & Delivery </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Estimated Delivery Time </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Purchase History </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <h4>Sarvice US</h4>
+
+                <div class="links">
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Support Center </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Term Condition </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Privacy Policy </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Help </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>FAQS </a>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="bottom_footer">
+            <div class="contianer">
+                <p> <span>Karim Store</span> &copy; Mobile Services</p>
+
+                <div class="payment_img">
+                    <img src="img/payment_method.png">
+                </div>
+            </div>
+        </div>
+     </footer>
+
+
+
+    
+     <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- file js -->
+     
+     <script src="JS/swiper.js"></script>
+     <script src="JS/items_home.js"></script>
+     <script src="JS/main.js"></script>
+     <script src="JS/info_page1.js"></script>
+
+
+
+
+
+    
+</body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karim Store</title>
+    <link rel="icon" href="img/icon.png">
+     <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!--<link rel="stylesheet" href="CSS/style.css"> -->
+    <link rel="stylesheet" href="CSS/info_page1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+
+    <div class="cart">
+        <div class="top_cart">
+            <h3>Cart Items: <span class="count_item_cart">0</span></h3>
+            <span onclick=" open_close_cart()" class="close_cart"><i class="fa-solid fa-circle-xmark"></i></span>
+        </div>
+
+        <div class="items_in_cart" id="cart_items">
+
+
+           
+
+
+        </div>
+
+        <div class="bottom_cart">
+                <div class="total">
+                    <p>subtotal</p>
+                    <p class="price_cart_total">0</p>
+                </div>
+            </div>
+
+            <div class="button_cart">
+                <a href="chekout.html" class="btn_cart ">checkout</a>
+                <span onclick="open_close_cart()" class="btn_cart_trans_bg ">shop more </span>
+            </div>
+         </div>   
+
+    </div>
+
+    
+
+    <header>
+
+        <div class="top_header">
+            <div class="container">
+                <a href="#" class="logo"> <img src="img/logo karim.png" width="130px" height="100px"></a>
+
+                <form action="" class="search_box">
+                    
+                    <div class="select_box">
+                        <select id="category" name="category">
+                            <option value="All categories">All categories</option>
+                            <option value="New Mobiles">New Mobiles</option>
+                            <option value="Used Mobiles">Uesd Mobiles</option>
+                            <option value="Accessories Mobiles">Accessories</option>
+                        </select>
+                    </div>
+
+                    <input type="text" name="search" id="search" placeholder="search for produstes" required>
+
+                    <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+
+                </form>
+
+                <div class="header_icons">
+                    <div class="icon">
+                        <a href="#">
+                            <i class="fa-solid fa-heart"></i>
+                            <span class="count count_fivourite">0</span>
+                        </a>
+                    </div>
+
+                    <div onclick="open_close_cart()" class="icon">
+                        <a href="#">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="count count_item_header">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="bottom_header">
+            <div class="container">
+                <nav class="nav">
+                    <div class="category_nav">
+                        <div onclick="Open_Categ_list()" class="category_btn">
+                            <i class="fa-solid fa-bars"></i>
+                            <p>Browse category</p>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+
+                        <div class="category_nav_list">
+                            <a href="new_mobile.html">New Mobile</a>
+                            <a href="#">Used Mobile</a>
+                            <a href="#">Accessories</a>
+                            <a href="#">Repire Mobile</a>
+                        </div>
+                    </div>
+
+                    <ul class="nav_links">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="new_mobile.html">New Mobile</a></li>
+                        <li><a href="#">Used Mobile</a></li>
+                        <li><a href="#">accessories</a></li>
+                    </ul>
+                </nav>
+
+                <div class="login_signup_btns">
+                    <a href="#" class="btn">login  <i class="fa-solid fa-right-to-bracket"></i> </a>
+
+                    <a href="#" class="btn">sign up  <i class="fa-solid fa-user-plus"></i> </a>
+                </div>
+
+            </div>
+        </div>
+
+    </header>
+
+
+ <!-- ..................... وصف المنتج 1 .........................-->
+
+ <div class="url">Home> mobile> oppo</div>
+ 
+  <div class="product-view container">
+  <div class="product-images">
+    <img id="mainImg" src="" alt="Main Product Image" class="main-img">
+    <div class="thumbs" id="thumbnails"></div>
+  </div>
+
+  <div class="product-details">
+    <h2 id="productName"></h2>
+    <div class="price-box">
+      <span class="price" id="productPrice"></span>
+      <span class="old-price" id="oldPrice"></span>
+      <span class="discount" id="discount"></span>
+    </div>
+    <p id="productDesc"></p>
+
+    <div class="stars">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+    </div>
+
+    <div class="quantity">
+    <label>الكمية:</label>
+    <div class="quantity-controls">
+        <button class="decrease">-</button>
+        <input type="number" id="quantityInput" value="1" min="1">
+        <button class="increase">+</button>
+    </div>
+    </div>
+    
+    <p class="total-price">الإجمالي: <span id="totalPrice">0 ج.م</span></p>
+
+   
+
+  <div class="action-buttons">
+    <button id="buyNowBtn" class="buy-btn">🛒 اشترِ الآن</button>
+    <button id="addToCartBtn" class="cart-btn">أضف إلى السلة 🛍️</button>
+  </div>
+</div>
+
+
+
+
+ <!-- ..................... تفاصيل المنتج ..................-->
+
+  <!-- .................................. جدول التفاصيل ................................-->
+
+    <div class="product-details">
+
+  <!-- وصف المنتج -->
+  <div class="product-description">
+    <h3>وصف المنتج </h3>
+    <p id="productDescription">سيتم تحميل التفاصيل هنا...</p>
+  </div>
+
+  <!-- جدول المواصفات -->
+  <div class="product-specs">
+    <h3>المواصفات التقنية</h3>
+    <table id="specsTable"></table>
+  </div>
+
+  <!-- المميزات -->
+  <div class="product-advantages">
+    <h3>مميزات المنتج</h3>
+    <ul id="advantagesList"></ul>
+  </div>
+
+  <!-- العيوب -->
+  <div class="product-disadvantages">
+    <h3>عيوب المنتج</h3>
+    <ul id="disadvantagesList"></ul>
+  </div>
+
+</div>
+
+  
+  <!--...............................نهاية جدول وتفاصيل المنتج .........................-->
+
+<script>
+  let pinImg = document.getElementById('main-img');
+  function showImg(pic) {
+    pinImg.src = pic;
+  }
+</script>
+
+ <hr class="section-divider">
+    <!-- footer-->
+     <footer>
+       
+        <div class="contianer"  style="width: auto; ">
+            <div class="big_row">
+                <img class="logo_footer" src="img/logo karim.png" width="50%" height="50%" alt="">
+
+                <p> Karim Store Page Mobile New and Used and repire <br> mobile and accessories mobile </p>
+
+                <div class="icon_footer">
+                    <a href="#"><i class="fa-solid fa-phone"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-solid fa-x"></i></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <h4>Find It Fast</h4>
+
+                <div class="links">
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Lap top & computer </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Mobile & Tabelet </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>TV & Audio </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Appliances </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Jewelry & Watches </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <h4>Quick Links</h4>
+
+                <div class="links">
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Your Account </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Returns & Exchanges </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Shipping & Delivery </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Estimated Delivery Time </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Purchase History </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <h4>Sarvice US</h4>
+
+                <div class="links">
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Support Center </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Term Condition </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Privacy Policy </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Help </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>FAQS </a>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="bottom_footer">
+            <div class="contianer">
+                <p> <span>Karim Store</span> &copy; Mobile Services</p>
+
+                <div class="payment_img">
+                    <img src="img/payment_method.png">
+                </div>
+            </div>
+        </div>
+     </footer>
+
+
+
+    
+     <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- file js -->
+     
+     <script src="JS/swiper.js"></script>
+     <script src="JS/items_home.js"></script>
+     <script src="JS/main.js"></script>
+     <script src="JS/info_page1.js"></script>
+
+
+
+
+
+    
+</body>
+>>>>>>> 114738c29722f7c2db213e7e69900f4c7555346f
+</html>

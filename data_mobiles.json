@@ -1,0 +1,93 @@
+<<<<<<< HEAD
+[
+  {
+    "id": 1,
+    "name": "Oppo A79",
+    "price": "13500 جنيه",
+    "category": "Oppo",
+    "images": [
+      "img/mobiles_new/oppo/oppo_a3x_1.jpg",
+      "img/mobiles_new/oppo/oppo_a3x_2.jpg",
+      "img/mobiles_new/oppo/oppo_a3x_3.jpg",
+      "img/mobiles_new/oppo/oppo_a3x_4.jpg"
+    ],
+    "details": {
+      "نظام التشغيل": "Android 13.0",
+      "الأبعاد": "18 × 10 × 6.5 سم; 193 جرام",
+      "الموديل": "OPPO A79",
+      "حجم الشاشة": "6.4 بوصة",
+      "الدقة": "1080 × 2400",
+      "معدل التحديث": "90 Hz",
+      "الرام": "8 GB",
+      "التخزين الداخلي": "256 GB"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Samsung A55",
+    "price": "16500 جنيه",
+    "category": "Samsung",
+    "images": [
+      "img/mobiles_new/samsung/a55_1.jpg",
+      "img/mobiles_new/samsung/a55_2.jpg",
+      "img/mobiles_new/samsung/a55_3.jpg"
+    ],
+    "details": {
+      "نظام التشغيل": "Android 14.0",
+      "الأبعاد": "16 × 7 × 0.9 سم; 187 جرام",
+      "الموديل": "Samsung A55",
+      "حجم الشاشة": "6.7 بوصة",
+      "الدقة": "1080 × 2400",
+      "معدل التحديث": "120 Hz",
+      "الرام": "8 GB",
+      "التخزين الداخلي": "256 GB"
+    }
+  }
+]
+=======
+[
+  {
+    "id": 1,
+    "name": "Oppo A79",
+    "price": "13500 جنيه",
+    "category": "Oppo",
+    "images": [
+      "img/mobiles_new/oppo/oppo_a3x_1.jpg",
+      "img/mobiles_new/oppo/oppo_a3x_2.jpg",
+      "img/mobiles_new/oppo/oppo_a3x_3.jpg",
+      "img/mobiles_new/oppo/oppo_a3x_4.jpg"
+    ],
+    "details": {
+      "نظام التشغيل": "Android 13.0",
+      "الأبعاد": "18 × 10 × 6.5 سم; 193 جرام",
+      "الموديل": "OPPO A79",
+      "حجم الشاشة": "6.4 بوصة",
+      "الدقة": "1080 × 2400",
+      "معدل التحديث": "90 Hz",
+      "الرام": "8 GB",
+      "التخزين الداخلي": "256 GB"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Samsung A55",
+    "price": "16500 جنيه",
+    "category": "Samsung",
+    "images": [
+      "img/mobiles_new/samsung/a55_1.jpg",
+      "img/mobiles_new/samsung/a55_2.jpg",
+      "img/mobiles_new/samsung/a55_3.jpg"
+    ],
+    "details": {
+      "نظام التشغيل": "Android 14.0",
+      "الأبعاد": "16 × 7 × 0.9 سم; 187 جرام",
+      "الموديل": "Samsung A55",
+      "حجم الشاشة": "6.7 بوصة",
+      "الدقة": "1080 × 2400",
+      "معدل التحديث": "120 Hz",
+      "الرام": "8 GB",
+      "التخزين الداخلي": "256 GB"
+    }
+  }
+]
+>>>>>>> 114738c29722f7c2db213e7e69900f4c7555346f

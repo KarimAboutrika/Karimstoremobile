@@ -1,0 +1,96 @@
+<<<<<<< HEAD
+function doPost(e) {
+  try {
+    // لو مفيش بيانات جايه
+    if (!e || !e.parameter) {
+      return ContentService.createTextOutput(
+        JSON.stringify({status: 'error', message: 'No data received'})
+      ).setMimeType(ContentService.MimeType.JSON);
+    }
+
+    // افتح الشيت
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var sheet = ss.getSheetByName('Sheet1') || ss.getActiveSheet();
+
+    // استقبل البيانات من الفورم
+    var email   = e.parameter.Email   || '';
+    var name    = e.parameter.name    || '';
+    var address = e.parameter.address || '';
+    var phone   = e.parameter.phone   || '';
+
+    // اضف صف جديد
+    sheet.appendRow([new Date(), email, name, address, phone]);
+
+    // رجع رد JSON
+    return ContentService.createTextOutput(
+      JSON.stringify({status: 'success', message: 'Data saved successfully'})
+    ).setMimeType(ContentService.MimeType.JSON);
+
+  } catch (err) {
+    return ContentService.createTextOutput(
+      JSON.stringify({status: 'error', message: err.toString()})
+    ).setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+
+// دالة اختبار داخل المحرر
+function testDoPost() {
+  var e = {
+    parameter: {
+      Email: 'test@example.com',
+      name: 'Karim',
+      address: 'Cairo',
+      phone: '0123456789'
+    }
+  };
+  Logger.log(doPost(e));
+=======
+function doPost(e) {
+  try {
+    // لو مفيش بيانات جايه
+    if (!e || !e.parameter) {
+      return ContentService.createTextOutput(
+        JSON.stringify({status: 'error', message: 'No data received'})
+      ).setMimeType(ContentService.MimeType.JSON);
+    }
+
+    // افتح الشيت
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var sheet = ss.getSheetByName('Sheet1') || ss.getActiveSheet();
+
+    // استقبل البيانات من الفورم
+    var email   = e.parameter.Email   || '';
+    var name    = e.parameter.name    || '';
+    var address = e.parameter.address || '';
+    var phone   = e.parameter.phone   || '';
+
+    // اضف صف جديد
+    sheet.appendRow([new Date(), email, name, address, phone]);
+
+    // رجع رد JSON
+    return ContentService.createTextOutput(
+      JSON.stringify({status: 'success', message: 'Data saved successfully'})
+    ).setMimeType(ContentService.MimeType.JSON);
+
+  } catch (err) {
+    return ContentService.createTextOutput(
+      JSON.stringify({status: 'error', message: err.toString()})
+    ).setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+
+// دالة اختبار داخل المحرر
+function testDoPost() {
+  var e = {
+    parameter: {
+      Email: 'test@example.com',
+      name: 'Karim',
+      address: 'Cairo',
+      phone: '0123456789'
+    }
+  };
+  Logger.log(doPost(e));
+>>>>>>> 114738c29722f7c2db213e7e69900f4c7555346f
+}

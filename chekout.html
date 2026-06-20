@@ -1,0 +1,712 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karim Store</title>
+    <link rel="icon" href="img/icon.png">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+    <!--........ cart ....................-->
+
+    <div class="cart">
+        <div class="top_cart">
+            <h3>Cart Items: <span class="count_item_cart">0</span></h3>
+            <span onclick=" open_close_cart()" class="close_cart"><i class="fa-solid fa-circle-xmark"></i></span>
+        </div>
+
+        <div class="items_in_cart" id="cart_items">
+
+
+           
+
+
+        </div>
+
+        <div class="bottom_cart">
+                <div class="total">
+                    <p>subtotal</p>
+                    <p class="price_cart_total">0</p>
+                </div>
+            </div>
+
+            <div class="button_cart">
+                <a href="#" class="btn_cart ">checkout</a>
+                <span onclick="open_close_cart()" class="btn_cart_trans_bg ">shop more </span>
+            </div>
+         </div>   
+
+    </div>
+
+    <!-- ....... header .....................-->
+    <header>
+
+        <div class="top_header">
+            <div class="container">
+                <a href="#" class="logo"> <img src="img/logo karim.png" width="130px" height="100px"></a>
+
+                <form action="" class="search_box">
+                    
+                    <div class="select_box">
+                        <select id="category" name="category">
+                            <option value="All categories">All categories</option>
+                            <option value="New Mobiles">New Mobiles</option>
+                            <option value="Used Mobiles">Uesd Mobiles</option>
+                            <option value="Accessories Mobiles">Accessories</option>
+                        </select>
+                    </div>
+
+                    <input type="text" name="search" id="search" placeholder="search for produstes" required>
+
+                    <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+
+                </form>
+
+                <div class="header_icons">
+                    <div class="icon">
+                        <a href="#">
+                            <i class="fa-solid fa-heart"></i>
+                            <span class="count count_fivourite">0</span>
+                        </a>
+                    </div>
+
+                    <div onclick="open_close_cart()" class="icon">
+                        <a href="#">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="count count_item_header">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="bottom_header">
+            <div class="container">
+                <nav class="nav">
+                    <div class="category_nav">
+                        <div onclick="Open_Categ_list()" class="category_btn">
+                            <i class="fa-solid fa-bars"></i>
+                            <p>Browse category</p>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+
+                        <div class="category_nav_list">
+                            <a href="#">New Mobile</a>
+                            <a href="#">Used Mobile</a>
+                            <a href="#">Accessories</a>
+                            <a href="#">Repire Mobile</a>
+                        </div>
+                    </div>
+
+                    <ul class="nav_links">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">New Mobile</a></li>
+                        <li><a href="#">Used Mobile</a></li>
+                        <li><a href="#">accessories</a></li>
+                    </ul>
+                </nav>
+
+                <div class="login_signup_btns">
+                    <a href="#" class="btn">login  <i class="fa-solid fa-right-to-bracket"></i> </a>
+
+                    <a href="#" class="btn">sign up  <i class="fa-solid fa-user-plus"></i> </a>
+                </div>
+
+            </div>
+        </div>
+
+    </header>
+
+    <!-- .......... chekout ...........-->
+     
+   <!--- <section class="checkout">
+        <form action="">
+
+            <div class="container">
+                <div class="ordersummary">
+                    <h1>order Summary</h1>
+                    <div class="items">
+
+                        <div class="item_cart">
+
+                            <div class="image_name">
+                                <img src="img/product/10.png">
+
+                                <div class="content">
+                                    <h4></h4>
+                                    <p class="price_cart"></p>
+                                    <div class="quantity_control">
+                                        <button class="decrease_quantity">-</button>
+                                        <span class="quantity">1</span>
+                                        <button class="increase_quantity">+</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="delete_itme"><i class="fa-solid fa-trash-can"></i></button>
+
+                        </div>
+
+                        <div class="item_cart">
+
+                            <div class="image_name">
+                                <img src="img/product/10.png">
+
+                                <div class="content">
+                                    <h4></h4>
+                                    <p class="price_cart"></p>
+                                    <div class="quantity_control">
+                                        <button class="decrease_quantity">-</button>
+                                        <span class="quantity">1</span>
+                                        <button class="increase_quantity">+</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="delete_itme"><i class="fa-solid fa-trash-can"></i></button>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="input_info">
+
+                </div>
+            </div>
+        </form>
+    </section>
+    !-->
+
+    <!-- اضافة المنتجات من السلة الي صفحة الدفع -->
+     <div class="checkout">
+        <form id="form_contact" method="post" action="https://script.google.com/macros/s/AKfycbzUQ-7C88asPrPLX046ZhSI2ZhztKQgSc-BPDJiArBchB_HcEo-ZrQcMTkaICj-Rx49WA/exec">
+
+            <input type="hidden" name="Items" id="items">
+            <input type="hidden" name="Total_price" id="totel_price">
+            <input type="hidden" name="Count Items" id="count_Items">
+
+            <div class="container">
+                <div class="ordersummery">
+                    <h1>Order Summery</h1>
+
+                    <div class="itmes" id="checkout_items">
+
+
+
+                    </div>
+
+                    <div class="botton_summary">
+                        <div class="shop_table">
+                            <p>subtotal :</p>
+                            <span class="subtotal_checkout">ج.م250.00</span>
+                        </div>
+
+                        <div class="shop_table">
+                            <p>shapping :</p>
+                            <span class="shapping">ج.م25.00</span>
+                        </div>
+
+                        <div class="shop_table">
+                            <p>total :</p>
+                            <span class="total_checkout">ج.م250.00</span>
+                        </div>
+
+                        <div class="button_div">
+                            <button type="submit">place order</button>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                 <div class="input_info">
+                    <div class="address">
+                        <h2>Delivery </h2>
+
+                        <div class="inputs">
+                            <label form="">Email</label>
+                            <input type="email" placeholder="Enter Your Email" name="Email" required>
+
+                            <label form="">name</label>
+                            <input type="text" placeholder="Enter Your Name" name="Name" required>
+
+                            <label form="">address</label>
+                            <input type="text" placeholder="Enter Your Address" name="Address" required>
+
+                            <label form="">phone</label>
+                            <input type="number" placeholder="Enter Your Phone" name="Phone" required>
+                        </div>    
+
+                    </div>
+
+                    <div class="coupon">
+                        <h2>Coupon Code </h2>
+
+                        <div class="inputs">
+                            <label form="">Coupon Code</label>
+                            <input type="text" placeholder="enter Your Coupon Code">
+                        </div>
+
+                        <div class="btn_coupon">
+                            <button>
+                                Apply Coupon
+                            </button>
+                        </div>
+                    </div>
+
+                 </div>
+            </div>
+        </form>
+     </div>
+   
+     <!-- ............. اخر صفحة الدفع -->
+      
+      <hr class="section-divider">
+
+    <!-- footer-->
+     <footer>
+        <div class="contianer">
+            <div class="big_row">
+                <img class="logo_footer" src="img/logo karim.png" width="50%" height="50%" alt="">
+
+                <p> Karim Store Page Mobile New and Used and repire <br> mobile and accessories mobile </p>
+
+                <div class="icon_footer">
+                    <a href="#"><i class="fa-solid fa-phone"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-solid fa-x"></i></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <h4>Find It Fast</h4>
+
+                <div class="links">
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Lap top & computer </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Mobile & Tabelet </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>TV & Audio </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Appliances </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Jewelry & Watches </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <h4>Quick Links</h4>
+
+                <div class="links">
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Your Account </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Returns & Exchanges </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Shipping & Delivery </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Estimated Delivery Time </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Purchase History </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <h4>Sarvice US</h4>
+
+                <div class="links">
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Support Center </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Term Condition </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Privacy Policy </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Help </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>FAQS </a>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="bottom_footer">
+            <div class="contianer">
+                <p> <span>Karim Store</span> &copy; Mobile Services</p>
+
+                <div class="payment_img">
+                    <img src="img/payment_method.png">
+                </div>
+            </div>
+        </div>
+     </footer>
+
+
+
+  <!-- file js -->
+     
+ 
+     <script src="JS/main.js"></script>
+     <script src="JS/submit_checkout.js"></script>
+
+
+
+
+
+
+    
+</body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karim Store</title>
+    <link rel="icon" href="img/icon.png">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+    <!--........ cart ....................-->
+
+    <div class="cart">
+        <div class="top_cart">
+            <h3>Cart Items: <span class="count_item_cart">0</span></h3>
+            <span onclick=" open_close_cart()" class="close_cart"><i class="fa-solid fa-circle-xmark"></i></span>
+        </div>
+
+        <div class="items_in_cart" id="cart_items">
+
+
+           
+
+
+        </div>
+
+        <div class="bottom_cart">
+                <div class="total">
+                    <p>subtotal</p>
+                    <p class="price_cart_total">0</p>
+                </div>
+            </div>
+
+            <div class="button_cart">
+                <a href="#" class="btn_cart ">checkout</a>
+                <span onclick="open_close_cart()" class="btn_cart_trans_bg ">shop more </span>
+            </div>
+         </div>   
+
+    </div>
+
+    <!-- ....... header .....................-->
+    <header>
+
+        <div class="top_header">
+            <div class="container">
+                <a href="#" class="logo"> <img src="img/logo karim.png" width="130px" height="100px"></a>
+
+                <form action="" class="search_box">
+                    
+                    <div class="select_box">
+                        <select id="category" name="category">
+                            <option value="All categories">All categories</option>
+                            <option value="New Mobiles">New Mobiles</option>
+                            <option value="Used Mobiles">Uesd Mobiles</option>
+                            <option value="Accessories Mobiles">Accessories</option>
+                        </select>
+                    </div>
+
+                    <input type="text" name="search" id="search" placeholder="search for produstes" required>
+
+                    <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+
+                </form>
+
+                <div class="header_icons">
+                    <div class="icon">
+                        <a href="#">
+                            <i class="fa-solid fa-heart"></i>
+                            <span class="count count_fivourite">0</span>
+                        </a>
+                    </div>
+
+                    <div onclick="open_close_cart()" class="icon">
+                        <a href="#">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="count count_item_header">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="bottom_header">
+            <div class="container">
+                <nav class="nav">
+                    <div class="category_nav">
+                        <div onclick="Open_Categ_list()" class="category_btn">
+                            <i class="fa-solid fa-bars"></i>
+                            <p>Browse category</p>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+
+                        <div class="category_nav_list">
+                            <a href="#">New Mobile</a>
+                            <a href="#">Used Mobile</a>
+                            <a href="#">Accessories</a>
+                            <a href="#">Repire Mobile</a>
+                        </div>
+                    </div>
+
+                    <ul class="nav_links">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">New Mobile</a></li>
+                        <li><a href="#">Used Mobile</a></li>
+                        <li><a href="#">accessories</a></li>
+                    </ul>
+                </nav>
+
+                <div class="login_signup_btns">
+                    <a href="#" class="btn">login  <i class="fa-solid fa-right-to-bracket"></i> </a>
+
+                    <a href="#" class="btn">sign up  <i class="fa-solid fa-user-plus"></i> </a>
+                </div>
+
+            </div>
+        </div>
+
+    </header>
+
+    <!-- .......... chekout ...........-->
+     
+   <!--- <section class="checkout">
+        <form action="">
+
+            <div class="container">
+                <div class="ordersummary">
+                    <h1>order Summary</h1>
+                    <div class="items">
+
+                        <div class="item_cart">
+
+                            <div class="image_name">
+                                <img src="img/product/10.png">
+
+                                <div class="content">
+                                    <h4></h4>
+                                    <p class="price_cart"></p>
+                                    <div class="quantity_control">
+                                        <button class="decrease_quantity">-</button>
+                                        <span class="quantity">1</span>
+                                        <button class="increase_quantity">+</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="delete_itme"><i class="fa-solid fa-trash-can"></i></button>
+
+                        </div>
+
+                        <div class="item_cart">
+
+                            <div class="image_name">
+                                <img src="img/product/10.png">
+
+                                <div class="content">
+                                    <h4></h4>
+                                    <p class="price_cart"></p>
+                                    <div class="quantity_control">
+                                        <button class="decrease_quantity">-</button>
+                                        <span class="quantity">1</span>
+                                        <button class="increase_quantity">+</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="delete_itme"><i class="fa-solid fa-trash-can"></i></button>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="input_info">
+
+                </div>
+            </div>
+        </form>
+    </section>
+    !-->
+
+    <!-- اضافة المنتجات من السلة الي صفحة الدفع -->
+     <div class="checkout">
+        <form id="form_contact" method="post" action="https://script.google.com/macros/s/AKfycbzUQ-7C88asPrPLX046ZhSI2ZhztKQgSc-BPDJiArBchB_HcEo-ZrQcMTkaICj-Rx49WA/exec">
+
+            <input type="hidden" name="Items" id="items">
+            <input type="hidden" name="Total_price" id="totel_price">
+            <input type="hidden" name="Count Items" id="count_Items">
+
+            <div class="container">
+                <div class="ordersummery">
+                    <h1>Order Summery</h1>
+
+                    <div class="itmes" id="checkout_items">
+
+
+
+                    </div>
+
+                    <div class="botton_summary">
+                        <div class="shop_table">
+                            <p>subtotal :</p>
+                            <span class="subtotal_checkout">ج.م250.00</span>
+                        </div>
+
+                        <div class="shop_table">
+                            <p>shapping :</p>
+                            <span class="shapping">ج.م25.00</span>
+                        </div>
+
+                        <div class="shop_table">
+                            <p>total :</p>
+                            <span class="total_checkout">ج.م250.00</span>
+                        </div>
+
+                        <div class="button_div">
+                            <button type="submit">place order</button>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                 <div class="input_info">
+                    <div class="address">
+                        <h2>Delivery </h2>
+
+                        <div class="inputs">
+                            <label form="">Email</label>
+                            <input type="email" placeholder="Enter Your Email" name="Email" required>
+
+                            <label form="">name</label>
+                            <input type="text" placeholder="Enter Your Name" name="Name" required>
+
+                            <label form="">address</label>
+                            <input type="text" placeholder="Enter Your Address" name="Address" required>
+
+                            <label form="">phone</label>
+                            <input type="number" placeholder="Enter Your Phone" name="Phone" required>
+                        </div>    
+
+                    </div>
+
+                    <div class="coupon">
+                        <h2>Coupon Code </h2>
+
+                        <div class="inputs">
+                            <label form="">Coupon Code</label>
+                            <input type="text" placeholder="enter Your Coupon Code">
+                        </div>
+
+                        <div class="btn_coupon">
+                            <button>
+                                Apply Coupon
+                            </button>
+                        </div>
+                    </div>
+
+                 </div>
+            </div>
+        </form>
+     </div>
+   
+     <!-- ............. اخر صفحة الدفع -->
+      
+      <hr class="section-divider">
+
+    <!-- footer-->
+     <footer>
+        <div class="contianer">
+            <div class="big_row">
+                <img class="logo_footer" src="img/logo karim.png" width="50%" height="50%" alt="">
+
+                <p> Karim Store Page Mobile New and Used and repire <br> mobile and accessories mobile </p>
+
+                <div class="icon_footer">
+                    <a href="#"><i class="fa-solid fa-phone"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-solid fa-x"></i></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <h4>Find It Fast</h4>
+
+                <div class="links">
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Lap top & computer </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Mobile & Tabelet </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>TV & Audio </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Appliances </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Jewelry & Watches </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <h4>Quick Links</h4>
+
+                <div class="links">
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Your Account </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Returns & Exchanges </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Shipping & Delivery </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Estimated Delivery Time </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Purchase History </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <h4>Sarvice US</h4>
+
+                <div class="links">
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Support Center </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Term Condition </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Privacy Policy </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>Help </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i>FAQS </a>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="bottom_footer">
+            <div class="contianer">
+                <p> <span>Karim Store</span> &copy; Mobile Services</p>
+
+                <div class="payment_img">
+                    <img src="img/payment_method.png">
+                </div>
+            </div>
+        </div>
+     </footer>
+
+
+
+  <!-- file js -->
+     
+ 
+     <script src="JS/main.js"></script>
+     <script src="JS/submit_checkout.js"></script>
+
+
+
+
+
+
+    
+</body>
+>>>>>>> 114738c29722f7c2db213e7e69900f4c7555346f
+</html>

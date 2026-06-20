@@ -1,0 +1,141 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>تفاصيل المنتج</title>
+  <link rel="stylesheet" href="CSS/data_mobiles.css">
+</head>
+<body>
+
+<div class="product-container">
+  <div class="flex-box">
+    <div class="left">
+      <img id="main-img" class="main-img" src="" alt="">
+      <div class="thumbs"></div>
+    </div>
+
+    <div class="right">
+      <h2 class="product-name"></h2>
+      <div class="price"></div>
+      <div class="quantity">
+        <p>الكمية:</p>
+        <input type="number" min="1" max="5" value="1">
+      </div>
+      <div class="btn-box">
+        <button class="cart-btn">إضافة للعربة</button>
+        <a href="cardandcash.html"><button class="buy-btn">اشتري الآن</button></a>
+      </div>
+    </div>
+  </div>
+
+  <table id="details-table">
+    <caption><h2>تفاصيل المنتج</h2></caption>
+  </table>
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+fetch("data/products.json")
+  .then(res => res.json())
+  .then(data => {
+    const product = data.find(p => p.id == id);
+    if (!product) return;
+
+    document.querySelector(".product-name").textContent = product.name;
+    document.querySelector(".price").textContent = product.price;
+    const mainImg = document.getElementById("main-img");
+    mainImg.src = product.images[0];
+
+    const thumbs = document.querySelector(".thumbs");
+    product.images.forEach(img => {
+      const t = document.createElement("img");
+      t.src = img;
+      t.onclick = () => (mainImg.src = img);
+      thumbs.appendChild(t);
+    });
+
+    const table = document.getElementById("details-table");
+    for (let key in product.details) {
+      const row = document.createElement("tr");
+      row.innerHTML = `<td>${key}</td><td>${product.details[key]}</td>`;
+      table.appendChild(row);
+    }
+  });
+</script>
+
+</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>تفاصيل المنتج</title>
+  <link rel="stylesheet" href="CSS/data_mobiles.css">
+</head>
+<body>
+
+<div class="product-container">
+  <div class="flex-box">
+    <div class="left">
+      <img id="main-img" class="main-img" src="" alt="">
+      <div class="thumbs"></div>
+    </div>
+
+    <div class="right">
+      <h2 class="product-name"></h2>
+      <div class="price"></div>
+      <div class="quantity">
+        <p>الكمية:</p>
+        <input type="number" min="1" max="5" value="1">
+      </div>
+      <div class="btn-box">
+        <button class="cart-btn">إضافة للعربة</button>
+        <a href="cardandcash.html"><button class="buy-btn">اشتري الآن</button></a>
+      </div>
+    </div>
+  </div>
+
+  <table id="details-table">
+    <caption><h2>تفاصيل المنتج</h2></caption>
+  </table>
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+fetch("data/products.json")
+  .then(res => res.json())
+  .then(data => {
+    const product = data.find(p => p.id == id);
+    if (!product) return;
+
+    document.querySelector(".product-name").textContent = product.name;
+    document.querySelector(".price").textContent = product.price;
+    const mainImg = document.getElementById("main-img");
+    mainImg.src = product.images[0];
+
+    const thumbs = document.querySelector(".thumbs");
+    product.images.forEach(img => {
+      const t = document.createElement("img");
+      t.src = img;
+      t.onclick = () => (mainImg.src = img);
+      thumbs.appendChild(t);
+    });
+
+    const table = document.getElementById("details-table");
+    for (let key in product.details) {
+      const row = document.createElement("tr");
+      row.innerHTML = `<td>${key}</td><td>${product.details[key]}</td>`;
+      table.appendChild(row);
+    }
+  });
+</script>
+
+</body>
+</html>
+>>>>>>> 114738c29722f7c2db213e7e69900f4c7555346f
